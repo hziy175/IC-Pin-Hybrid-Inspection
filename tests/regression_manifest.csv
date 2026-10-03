@@ -1,0 +1,9 @@
+image,expected
+test_chip.jpg,OK
+defect_missing_top.jpg,NG
+defect_missing_bottom.jpg,NG
+defect_shift_top_T08_right5.jpg,NG
+defect_width_top_T08.jpg,NG
+defect_height_top_T08.jpg,NG
+defect_area_top_T08.jpg,NG
+defect_bent_top_T08.jpg,NG

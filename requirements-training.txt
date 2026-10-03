@@ -1,0 +1,6 @@
+-r requirements.txt
+torch>=2.5
+torchvision>=0.20
+pillow>=10
+onnx>=1.16
+onnxscript>=0.3

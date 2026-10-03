@@ -1,0 +1,64 @@
+{
+  "product_name": "IC_A_demo",
+  "recipe_version": "1.0.0",
+  "body_detection": {
+    "threshold": 95,
+    "min_area_ratio": 0.08,
+    "max_area_ratio": 0.5,
+    "center_min_ratio": 0.2,
+    "center_max_ratio": 0.8,
+    "min_rectangularity": 0.6
+  },
+  "pin_roi": {
+    "pin_threshold": 150,
+    "pin_band_ratio": 0.16,
+    "x_margin_ratio": 0.04,
+    "y_margin_ratio": 0.02
+  },
+  "pin_candidate": {
+    "min_area": 60,
+    "max_area": 450,
+    "min_aspect": 1.2,
+    "max_aspect": 5.5
+  },
+  "matching": {
+    "tolerance_pitch_ratio": 0.45
+  },
+  "defect_limits": {
+    "missing_gap_error_limit": 0.25,
+    "pitch_error_limit": 0.25,
+    "position_shift_pitch_ratio": 0.2,
+    "width_error_limit": 0.3,
+    "height_error_limit": 0.25,
+    "area_error_limit": 0.3,
+    "aspect_ratio_error_limit": 0.3,
+    "fill_ratio_error_limit": 0.3
+  },
+  "reference": {
+    "geometric_reference_image": "data/reference/reference_ic.jpg"
+  },
+  "validated_robustness": {
+    "brightness_note": "global 0.8x / 1.2x passed after reference-guided brightness normalization",
+    "rotation_deg": [
+      -5,
+      5
+    ],
+    "translation_px": [
+      -20,
+      20
+    ],
+    "scale_factor": [
+      0.9,
+      1.1
+    ]
+  },
+  "pin_layout": {
+    "expected_pin_count_per_row": 16
+  },
+  "cnn": {
+    "patch_width": 20,
+    "patch_height": 40,
+    "defect_threshold": 0.5,
+    "provider": "CPUExecutionProvider"
+  }
+}

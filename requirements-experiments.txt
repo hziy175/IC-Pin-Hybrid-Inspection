@@ -1,0 +1,5 @@
+-r requirements-training.txt
+ultralytics>=8.3
+open3d>=0.19
+matplotlib>=3.8
+scikit-learn>=1.5

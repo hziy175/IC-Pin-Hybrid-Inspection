@@ -1,0 +1,142 @@
+========================================================================
+IC PIN HYBRID INSPECTOR
+========================================================================
+
+Recipe product = IC_A_demo
+Recipe version = 1.0.0
+Body threshold = 95
+Expected pins/row = 16
+
+Reference image:
+D:\IC-Pin-Hybrid-Inspection\data\reference\reference_ic.jpg
+
+Original test image:
+D:\IC-Pin-Hybrid-Inspection\data\input\defect_missing_top.jpg
+
+Deskew Information:
+Raw angle = -0.324 deg
+Normalized angle = -0.324 deg
+
+Deskewed test image saved to:
+D:\IC-Pin-Hybrid-Inspection\output\deskewed\defect_missing_top_deskewed.jpg
+
+Reference Pin Count:
+Top = 16
+Bottom = 16
+
+Test Pin Count:
+Top = 15
+Bottom = 16
+
+Missing Pin Result:
+Top missing: T08
+Bottom missing: None
+
+Matching Information:
+Top reference pitch ratio = 0.0625
+Top match tolerance ratio = 0.0281
+Bottom reference pitch ratio = 0.0625
+Bottom match tolerance ratio = 0.0281
+
+Unmatched Detected Pins:
+Top unmatched = 0
+Bottom unmatched = 0
+
+Missing Gap Evidence:
+Top T08: T07-T09, gap=31.95 px, expected=32.04 px, error=0.3%, consistent=True
+Bottom missing gap evidence: None
+
+Pitch Abnormal Result:
+Top checked adjacent pairs = 13
+Top abnormal: None
+Bottom checked adjacent pairs = 15
+Bottom abnormal: None
+
+Position Shift Result:
+Top reference pitch = 15.96 px
+Top detected pitch = 15.99 px
+Top alignment scale = 1.0019
+Top shift limit = 3.20 px
+Top shifted: None
+Bottom reference pitch = 15.99 px
+Bottom detected pitch = 16.01 px
+Bottom alignment scale = 1.0013
+Bottom shift limit = 3.20 px
+Bottom shifted: None
+
+Pin Size Abnormal Result:
+Top checked pins = 15
+Top size abnormal: None
+Bottom checked pins = 16
+Bottom size abnormal: None
+
+Shape Candidate Result:
+Top checked pins = 15
+Top shape candidate: None
+Bottom checked pins = 16
+Bottom shape candidate: None
+
+========================================================================
+CNN APPEARANCE BRANCH
+========================================================================
+
+ONNX model = D:\IC-Pin-Hybrid-Inspection\models\resnet18_pin_demo.onnx
+Provider = ['CPUExecutionProvider']
+CNN patch = 20 x 40
+CNN crop mode = Reference-slot aligned
+CNN diagnostic threshold = 0.50
+
+Per-Pin CNN Results:
+T01: P(normal)=0.9194, P(defect)=0.0806, CNN=normal
+T02: P(normal)=0.9086, P(defect)=0.0914, CNN=normal
+T03: P(normal)=0.9191, P(defect)=0.0809, CNN=normal
+T04: P(normal)=0.8249, P(defect)=0.1751, CNN=normal
+T05: P(normal)=0.9595, P(defect)=0.0405, CNN=normal
+T06: P(normal)=0.7934, P(defect)=0.2066, CNN=normal
+T07: P(normal)=0.8127, P(defect)=0.1873, CNN=normal
+T08: Missing -> CNN skipped
+T09: P(normal)=0.9043, P(defect)=0.0957, CNN=normal
+T10: P(normal)=0.8435, P(defect)=0.1565, CNN=normal
+T11: P(normal)=0.8658, P(defect)=0.1342, CNN=normal
+T12: P(normal)=0.8922, P(defect)=0.1078, CNN=normal
+T13: P(normal)=0.8846, P(defect)=0.1154, CNN=normal
+T14: P(normal)=0.8554, P(defect)=0.1446, CNN=normal
+T15: P(normal)=0.8646, P(defect)=0.1354, CNN=normal
+T16: P(normal)=0.9769, P(defect)=0.0231, CNN=normal
+B01: P(normal)=0.9865, P(defect)=0.0135, CNN=normal
+B02: P(normal)=0.9850, P(defect)=0.0150, CNN=normal
+B03: P(normal)=0.9743, P(defect)=0.0257, CNN=normal
+B04: P(normal)=0.9864, P(defect)=0.0136, CNN=normal
+B05: P(normal)=0.9826, P(defect)=0.0174, CNN=normal
+B06: P(normal)=0.9929, P(defect)=0.0071, CNN=normal
+B07: P(normal)=0.9707, P(defect)=0.0293, CNN=normal
+B08: P(normal)=0.9338, P(defect)=0.0662, CNN=normal
+B09: P(normal)=0.9634, P(defect)=0.0366, CNN=normal
+B10: P(normal)=0.9483, P(defect)=0.0517, CNN=normal
+B11: P(normal)=0.9893, P(defect)=0.0107, CNN=normal
+B12: P(normal)=0.9797, P(defect)=0.0203, CNN=normal
+B13: P(normal)=0.9830, P(defect)=0.0170, CNN=normal
+B14: P(normal)=0.9862, P(defect)=0.0138, CNN=normal
+B15: P(normal)=0.9651, P(defect)=0.0349, CNN=normal
+B16: P(normal)=0.9889, P(defect)=0.0111, CNN=normal
+
+CNN checked pins = 31
+CNN missing-skipped pins = 1
+CNN defect candidates = None
+
+CNN diagnostic image saved to:
+D:\IC-Pin-Hybrid-Inspection\output\cnn_diagnostic\defect_missing_top_cnn.jpg
+
+CNN branch included in final fusion.
+
+========================================================================
+HYBRID FUSION
+========================================================================
+Rule Result = NG
+CNN Result  = OK
+CNN NG Pins = None
+Fusion Rule = Rule NG OR CNN NG
+Final Result = NG
+
+Result image saved to:
+D:\IC-Pin-Hybrid-Inspection\output\results\defect_missing_top_result.jpg
